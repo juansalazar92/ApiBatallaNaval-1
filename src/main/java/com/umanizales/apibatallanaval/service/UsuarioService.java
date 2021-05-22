@@ -38,4 +38,11 @@ public class UsuarioService {
         }
     }
 
+
+    public ResponseEntity<Object> findUsersByRol(short codeRol)
+    {
+        return new ResponseEntity<>(new RespuestaDTO("Exitoso",
+                usuarioRepository.obtenerUsuariosPorRol(codeRol),null), HttpStatus.OK);
+    }
+
 }
